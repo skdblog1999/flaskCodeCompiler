@@ -1,0 +1,50 @@
+body,html {
+    background-color: #F3F7F7;
+}
+
+.coc-editor-with-action-container {
+    position: relative;
+    top: 30%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.coc-editor-container {
+    width: 800px;
+    height: 500px;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+}
+
+.coc-editor-header {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 800px;
+    background-color: #F3F7F7;
+}
+
+.coc-editor-select-lang, .coc-editor-select-theme  {
+    position: relative;
+    top: 10px;
+}
+
+.coc-editor-body {
+    height: 400px;
+    width: 800px;
+    margin-top: 15px;
+}
+
+.coc-editor-actions {
+    display: flex;
+    justify-content: space-between  ;
+    width: 800px;
+    position: relative;
+    align-items: center;
+    top: 20px;
+    margin-bottom: 100px;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+    padding: 10px;
+}

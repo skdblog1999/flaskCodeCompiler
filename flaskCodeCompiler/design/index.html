@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Flask Compiler</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="coc-editor-with-action-container">
+        <div class="coc-editor-container">
+            <div class="coc-editor-header">
+                <div class="coc-editor-select-lang">
+                    <div class="ui form">
+                        <div class="field">
+                            <select class="ui search dropdown" id="language">
+                                <option value="" selected disabled hidden>Select Language</option>
+                                <option value="python">Python</option>
+                                <option value="javascript">Javascript</option>
+                                <option value="cpp">C/C++</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="coc-editor-tools">
+                    <div class="coc-editor-select-theme">
+                        <div class="ui form">
+                            <div class="field">
+                                <select class="ui search dropdown" id="theme">
+                                    <option value="" selected disabled hidden>Select Theme</option>
+                                    <option value="vs">Visual Studio</option>
+                                    <option value="vs-dark">Visual Studio Dark</option>
+                                    <option value="hc-black">High Contrast Dark</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="coc-editor-body raised" id="coc-editor-body"></div>
+        </div>
+        <div class="coc-editor-actions">
+            <div id="custom-inputs">
+                <input type="checkbox" name="custom-inputs"> Test against custom input
+            </div>
+
+            <div class="actions">
+                <button class="ui button">
+                    Run Code
+                </button>
+                <button class="ui button">
+                    Submit Code
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="dev/vs/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script>
+        $('select.dropdown')
+            .dropdown();
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>
