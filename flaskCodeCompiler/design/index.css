@@ -1,11 +1,13 @@
-body,html {
+body,
+html {
     background-color: #F3F7F7;
 }
 
 .coc-editor-with-action-container {
     position: relative;
     top: 30%;
-    left: 25%;
+    left: 20%;
+    width: 800px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -15,7 +17,7 @@ body,html {
 .coc-editor-container {
     width: 800px;
     height: 500px;
-    box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, .2);
 }
 
 .coc-editor-header {
@@ -26,7 +28,7 @@ body,html {
     background-color: #F3F7F7;
 }
 
-.coc-editor-select-lang  {
+.coc-editor-select-lang {
     position: relative;
     top: 10px;
     left: 20px;
@@ -46,20 +48,118 @@ body,html {
 
 .coc-editor-actions {
     display: flex;
-    justify-content: space-between  ;
+    justify-content: space-between;
     width: 800px;
     position: relative;
     align-items: center;
     top: 20px;
     margin-bottom: 100px;
     padding: 10px;
+
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
 }
 
 .coc-editor-actions-button button {
-    box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, .2);
+
 }
 
 
 .hide {
     display: none;
+}
+
+
+
+/* Responsive Design */
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {}
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    .coc-editor-with-action-container,
+    .coc-editor-container,
+    .coc-editor-header,
+    .coc-editor-body,
+    .coc-editor-actions {
+        width: 700px;
+    }
+
+
+}
+
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .coc-editor-with-action-container,
+    .coc-editor-container,
+    .coc-editor-header,
+    .coc-editor-body,
+    .coc-editor-actions {
+        width: 550px;
+    }
+
+
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .coc-editor-with-action-container,
+    .coc-editor-container,
+    .coc-editor-header,
+    .coc-editor-body,
+    .coc-editor-actions {
+        width: 400px;
+    }
+
+
+
+
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .coc-editor-with-action-container,
+    .coc-editor-container,
+    .coc-editor-header,
+    .coc-editor-body,
+    .coc-editor-actions {
+        width: 300px;
+    }
+
+
 }

@@ -43,11 +43,11 @@ $(document).ready(function () {
     })
 });
 
-$(document).ready(function() {
-    $('#run-button').on('click', function() {
+$(document).ready(function () {
+    $('#run-button').on('click', function () {
         if ($('#custom-inputs input').is(':checked')) {
             if (!$.trim($("#inputs").val())) {
-                alert('Please Enter Inputs');    
+                alert('Please Enter Inputs');
             } else {
                 console.log('Have Coustom Inputs');
             }
