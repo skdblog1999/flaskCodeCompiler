@@ -26,9 +26,16 @@ body,html {
     background-color: #F3F7F7;
 }
 
-.coc-editor-select-lang, .coc-editor-select-theme  {
+.coc-editor-select-lang  {
     position: relative;
     top: 10px;
+    left: 20px;
+}
+
+.coc-editor-select-theme {
+    position: relative;
+    top: 10px;
+    right: 20px;
 }
 
 .coc-editor-body {
@@ -45,6 +52,14 @@ body,html {
     align-items: center;
     top: 20px;
     margin-bottom: 100px;
-    box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
     padding: 10px;
+}
+
+.coc-editor-actions-button button {
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+}
+
+
+.hide {
+    display: none;
 }

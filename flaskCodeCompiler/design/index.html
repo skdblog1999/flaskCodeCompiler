@@ -11,7 +11,7 @@
 
 <body>
 
-    <div class="coc-editor-with-action-container">
+    <div class="coc-editor-with-action-container" id="editor">
         <div class="coc-editor-container">
             <div class="coc-editor-header">
                 <div class="coc-editor-select-lang">
@@ -45,14 +45,17 @@
         </div>
         <div class="coc-editor-actions">
             <div id="custom-inputs">
-                <input type="checkbox" name="custom-inputs"> Test against custom input
+                <input type="checkbox" name="custom-inputs"> Test against custom input <br>
+                <textarea id="inputs" class="inputs hide">
+
+                </textarea>
             </div>
 
             <div class="actions">
-                <button class="ui button">
+                <button class=" coc-editor-actions-button ui button" id="run-button">
                     Run Code
                 </button>
-                <button class="ui button">
+                <button class=" coc-editor-actions-button ui green button submit-button">
                     Submit Code
                 </button>
             </div>
