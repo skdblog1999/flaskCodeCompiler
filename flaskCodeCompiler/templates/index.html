@@ -72,7 +72,11 @@
         .dropdown();
 </script>
 <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-
+<script>
+    $(document).ready(function () {
+        monacoEditorConfiguration();
+    });
+</script>
 
 </body>
 

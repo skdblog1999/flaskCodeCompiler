@@ -1,6 +1,29 @@
-var editor;
+var editor; // Global variable containing editor properties
+
+
+//  Monaco Editor Configuration
+
+function monacoEditorConfiguration() {
+
+    require.config({
+        paths: {
+            'vs': '../../static/dev/vs'
+        }
+    });
+    require(['vs/editor/editor.main'], function () {
+        editor = monaco.editor.create(document.getElementById('coc-editor-body'), {
+            language: 'python',
+            scrollBeyondLastLine: false,
+            theme: 'vs',
+        });
+    });
+}
+
+// Above Code Section Ends
 
 $(document).ready(function () {
+
+    // Check if the browser is opened in mobile 
     if (mobileCheck()) {
         $('#editor').addClass('hide');
     }
@@ -13,26 +36,24 @@ $(document).ready(function () {
         return check;
     };
 
-    require.config({
-        paths: {
-            'vs': '../../static/dev/vs'
-        }
-    });
-    require(['vs/editor/editor.main'], function () {
-        editor = monaco.editor.create(document.getElementById('coc-editor-body'), {
-            language: 'python',
-            scrollBeyondLastLine: false,
-            theme: 'vs'
-        });
-    });
+    // Above Function Ends Here
 
+
+    // Changes Language Of The Editor
     $('.coc-editor-select-lang select').on('change', function () {
         window.monaco.editor.setModelLanguage(window.monaco.editor.getModels()[0], this.value)
     });
 
+    // Above Code Section Ends
+
+    // Changes Theme Of The Editor
     $('.coc-editor-select-theme select').on('change', function () {
         monaco.editor.setTheme(this.value);
     });
+
+    // Above Code Section Ends
+
+    // Show Input Textarea
 
     $('#custom-inputs input').on('change', function () {
         if ($('#custom-inputs input').is(':checked')) {
@@ -42,11 +63,27 @@ $(document).ready(function () {
         }
     })
 
+    // Above Code Section Ends
+
+    // Get Code Written In Editor
+
     function getEditorValue() {
         return editor.getValue();
     }
 
-    // Code Compile
+    // Above Code Section Ends
+
+    // Get Editor Language
+
+    function getEditorLang() {
+        return editor._configuration._rawOptions.language;
+    }
+
+    // Above Code Section Ends
+
+    // Sends Code To Server
+
+    // Send Code To Server To Just Run It
     var socket = io();
     $('#run-button').on('click', function () {
         if ($('#custom-inputs input').is(':checked')) {
@@ -55,17 +92,34 @@ $(document).ready(function () {
             } else {
                 var inputs = $('#inputs').val().trim().split(',');
                 var code = getEditorValue();
-                socket.emit('run_code', {inputs: inputs, code: code});
+                var editorLang = getEditorLang();
+                socket.emit('run_code', {
+                    inputs: inputs,
+                    code: code,
+                    lang: editorLang
+                });
             }
         } else {
             var code = getEditorValue();
-            socket.emit('run_code', {inputs: 0, code: code});
+            var editorLang = getEditorLang();
+            socket.emit('run_code', {
+                inputs: 0,
+                code: code,
+                lang: editorLang
+            });
         }
     });
 
+
+    // Send Code To Server To Submit It
     $('#submit-button').on('click', function () {
         var code = getEditorValue();
-        socket.emit('submit_code', {code: code});
+        var editorLang = getEditorLang();
+        socket.emit('submit_code', {
+            code: code,
+            lang: editorLang
+        });
     })
-});
 
+    // Above Section Ends
+});
